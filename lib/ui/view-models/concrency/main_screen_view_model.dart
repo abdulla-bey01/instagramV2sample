@@ -57,7 +57,7 @@ class MainScreenViewModel extends RxController implements Initializable {
       id: 1,
       author: UserModel(
         id: 1,
-        username: 'abdullabaylis',
+        username: 'Your story',
         avatarUrl:
             'https://instagram.fgyd4-2.fna.fbcdn.net/v/t51.2885-15/228640666_224555699564584_3086103443573315044_n.jpg?stp=dst-jpg_e35_p1080x1080&_nc_ht=instagram.fgyd4-2.fna.fbcdn.net&_nc_cat=104&_nc_ohc=YvGWh8Bd558AX_IKF_p&edm=ALQROFkBAAAA&ccb=7-4&ig_cache_key=MjYzMDA3NzczMzkyMTQyMjcxOQ%3D%3D.2-ccb7-4&oh=00_AT_6qvo0B4fjzZ_zjbGCCqEWLqLQQaPi62mWMAnIbElKvw&oe=625E7391&_nc_sid=30a2ef',
       ),

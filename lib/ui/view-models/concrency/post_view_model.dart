@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
-import 'package:instagram_clone/data/models/user_model.dart';
+import '/data/models/user_model.dart';
 import '/data/models/post_model.dart';
 import '/ui/view-models/abstraction/initializable.dart';
 
@@ -17,11 +17,16 @@ class PostViewModel extends RxController implements Initializable {
   }
 
   void toggleLike() {
-    _post.value.isLiked = !_post.value.isLiked;
     _post.value.whoLiked ??= <UserModel>[];
-    _post.value.whoLiked!.add(
-      UserModel(id: 0, username: 'current-user', avatarUrl: ''),
-    );
+    if (!_post.value.isLiked) {
+      _post.value.whoLiked!.add(
+        UserModel(
+            id: 'current-user-id', username: 'current-user', avatarUrl: ''),
+      );
+    } else {
+      _post.value.whoLiked!
+          .removeWhere((element) => element.id == 'current-user-id');
+    }
     _post.refresh();
   }
 

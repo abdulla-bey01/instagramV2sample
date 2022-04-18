@@ -6,7 +6,10 @@ class PostModel {
   final UserModel author;
   final String description;
   final List<String> imageUrls;
-  late bool isLiked;
+  bool get isLiked =>
+      whoLiked != null &&
+      whoLiked!.isNotEmpty &&
+      whoLiked!.any((element) => element.id == 'current-user-id');
   late bool isSaved;
   List<UserModel>? whoLiked;
   final List<CommentModel> comments;
@@ -16,7 +19,6 @@ class PostModel {
     required this.author,
     required this.description,
     required this.imageUrls,
-    this.isLiked = false,
     this.isSaved = false,
     this.comments = const [],
   });
